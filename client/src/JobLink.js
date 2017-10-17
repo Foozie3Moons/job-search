@@ -10,7 +10,9 @@ class JobLink extends Component {
   }
   render() {
     return (
+      <div>
 
+      </div>
     )
   }
 }

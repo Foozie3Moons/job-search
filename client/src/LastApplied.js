@@ -7,10 +7,17 @@ class LastApplied extends Component {
     this.state = {
 
     }
+    this.componentDidMount = this.componentDidMount.bind(this)
+  }
+
+  componentDidMount(){
+    fetch('/jobs')
   }
   render() {
     return (
+      <div>
 
+      </div>
     )
   }
 }

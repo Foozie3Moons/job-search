@@ -10,7 +10,9 @@ class PersonalNote extends Component {
   }
   render() {
     return (
+      <div>
 
+      </div>
     )
   }
 }

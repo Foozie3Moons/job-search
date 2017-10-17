@@ -11,11 +11,10 @@ class SideBar extends Component {
     this.state = {
 
     }
-    this.componentWillMount = this.componentWillMount.bind(this)
   }
   render() {
     return (
-      <div>
+      <div className="sideBar">
         <div className="LastApplied">
 
         </div>
