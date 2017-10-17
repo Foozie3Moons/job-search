@@ -1,26 +1,35 @@
 import React, { Component } from 'react';
 import './App.css';
+import Count from './Count';
+import JobLink from './JobLink';
+import LastApplied from './LastApplied';
+import PersonalNote from './PersonalNote';
 
 class SideBar extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+    this.state = {
 
-    render() {
-      return (
-        <div className="dateApplied">
-
-        </div>
-        <div className="count">
-
-        </div>
-        <div className="personalNote">
-
-        </div>
-        <div className="jobLink">
-
-        </div>
-      )
     }
+    this.componentWillMount = this.componentWillMount.bind(this)
+  }
+  render() {
+    return (
+      <div>
+        <div className="LastApplied">
+
+        </div>
+        <div className="Count">
+
+        </div>
+        <div className="PersonalNote">
+
+        </div>
+        <div className="JobLink">
+
+        </div>
+      </div>
+    )
   }
 }
 
