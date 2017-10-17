@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 class Display extends Component {
     constructor(props) {
@@ -13,20 +14,36 @@ class Display extends Component {
         .then(response => response.json())
         .then(response => this.setState({jobs: response}))
     }
+    isExpandableRow(row) {
+        if (row.id < 2) return true;
+        else return false;
+    }
+    expandComponent(row) {
+        return (
+            <BootstrapTable data={row.expand} />
+        )
+    }
     render(){
+        var jobslist = this.state.jobs;
+        const options = {
+            expandRowBgColor: 'rgb(242,255,162)'
+        };
+                
         return(
             <div className='jobsList'>
                 <h1>My Job Tracker</h1>
                 <h4>Here is a tracker for jobs you've applied to:</h4>
-                {this.state.jobs.map((item, index) => 
-                <li key={index}>
-                    <p><span className="objectTitle">Position: </span>{item.title}</p>
-                    <p><span className="objectTitle">Company: </span>{item.company}</p>
-                    <p><span className="objectTitle">Location: </span>{item.location}</p>
-                    <p><span className="objectTitle">Date Applied: </span>{item.date}</p>
-                    <p><span className="objectTitle">Link:</span> {item.website}</p>
-                    <p><span className="objectTitle">Notes/Comments: </span>{item.comments}</p>
-                    </li>)}
+                <BootstrapTable data={jobslist}
+                    options={options}
+                    expandableRow={ this.isExpandableRow }
+                    expandComponent={ this.expandComponent }>
+                    <TableHeaderColumn dataField='title' isKey>Job Title</TableHeaderColumn>
+                    <TableHeaderColumn dataField='company'>Company Name</TableHeaderColumn>
+                    <TableHeaderColumn dataField='location'>Job Location</TableHeaderColumn>
+                    <TableHeaderColumn dataField='website'>Job Link</TableHeaderColumn>
+                    <TableHeaderColumn dataField='date'>Date Applied</TableHeaderColumn>
+                    <TableHeaderColumn dataField='comments'>Notes</TableHeaderColumn>
+                </BootstrapTable>
             </div>
         )
     }
