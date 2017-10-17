@@ -5,10 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var Foo = require('./models/foo');
+var Job = require('./models/job');
 
 var index = require('./routes/index');
-var foo = require('./routes/foo');
+var jobs = require('./routes/jobs');
 
 var app = express();
 
@@ -24,11 +24,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://localhost/mern-backend'); // change this line to change db name
+mongoose.connect('mongodb://localhost/mern-job-search'); // change this line to change db name
 
 // configure routes
 app.use('/', index);
-app.use('/foo', foo);
+app.use('/jobs', jobs);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

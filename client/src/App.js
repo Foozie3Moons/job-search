@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      foo: []
+      job: []
     }
   }
   componentDidMount() {
@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <ul className="App">
-        {this.state.foo}
+        {this.state.job}
       </ul>
     );
   }
