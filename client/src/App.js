@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Form from './Form'
 
 class App extends Component {
   constructor(props) {
@@ -14,12 +15,10 @@ class App extends Component {
     //   .then(response => response.json())
     //   .then(response => this.setState({foo: response}))
   }
-  
+
   render() {
     return (
-      <ul className="App">
-        {this.state.job}
-      </ul>
+      <Form />
     );
   }
 }
