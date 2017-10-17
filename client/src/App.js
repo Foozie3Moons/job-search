@@ -22,13 +22,8 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        <ul className="App">
-          <Display />
-        </ul>
         <Main />
-        <SideBar />
       </div>
-      
     );
   }
 }

@@ -18,14 +18,12 @@ class SideBar extends Component {
         <div className="LastApplied">
 
         </div>
-        <div className="Count">
-          <Count />
-        </div>
+        <Count />
         <div className="PersonalNote">
-
+          personal note
         </div>
         <div className="JobLink">
-
+          job link
         </div>
       </div>
     )
