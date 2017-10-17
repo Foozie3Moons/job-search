@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import SideBar from './SideBar';
 import './App.css';
 
@@ -21,10 +20,14 @@ class App extends Component {
 
   render() {
     return (
-      <ul className="App">
-        <Display />
-      </ul>
-      <Main />
+      <div>
+        <ul className="App">
+          <Display />
+        </ul>
+        <Main />
+        <SideBar />
+      </div>
+      
     );
   }
 }
