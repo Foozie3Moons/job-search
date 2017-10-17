@@ -10,9 +10,9 @@ class Count extends Component {
     this.componentDidMount = this.componentDidMount.bind(this)
   }
   componentDidMount() {
-    // fetch('/jobs')
-    // .then(response => response.json())
-    // .then(response => this.setState({count: response}))
+    fetch('/jobs')
+    .then(response => console.log(response));
+
   }
 
   render() {

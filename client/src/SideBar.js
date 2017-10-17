@@ -16,16 +16,13 @@ class SideBar extends Component {
     return (
       <div className="sideBar">
         <div className="LastApplied">
-
-        </div>
-        <div className="Count">
-
+          last applied
         </div>
         <div className="PersonalNote">
-
+          personal note
         </div>
         <div className="JobLink">
-
+          job link
         </div>
       </div>
     )
