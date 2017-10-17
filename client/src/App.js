@@ -10,14 +10,14 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    fetch("/foo")
-      .then(response => response.json())
-      .then(response => this.setState({foo: response}))
+    // fetch("/foo")
+    //   .then(response => response.json())
+    //   .then(response => this.setState({foo: response}))
   }
   render() {
     return (
       <ul className="App">
-        {this.state.foo.map((item, index) => (<li key={index}>{item.title}</li>))}
+        {this.state.foo}
       </ul>
     );
   }
