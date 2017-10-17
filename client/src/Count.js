@@ -5,14 +5,13 @@ class Count extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      count: ""
+      count: 0
     }
     this.componentDidMount = this.componentDidMount.bind(this)
   }
   componentDidMount() {
     fetch('/jobs')
-    .then(response => console.log(response));
-
+    .then(response => console.log(response.json()));
   }
 
   render() {

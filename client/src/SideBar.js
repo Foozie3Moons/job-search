@@ -18,6 +18,7 @@ class SideBar extends Component {
         <div className="LastApplied">
           last applied
         </div>
+        <Count />
         <div className="PersonalNote">
           personal note
         </div>
