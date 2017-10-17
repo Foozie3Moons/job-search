@@ -17,7 +17,8 @@ class App extends Component {
   render() {
     return (
       <ul className="App">
-        {this.state.job}
+        {/* {this.state.job} */}
+        <Display />
       </ul>
     );
   }
