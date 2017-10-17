@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { FormGroup } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
 import { ControlLabel } from 'react-bootstrap';
 import { HelpBlock } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 class Form extends Component {
   constructor(props) {
@@ -23,6 +23,10 @@ class Form extends Component {
     this.setState({ value: e.target.value });
   }
 
+  handleSubmit = (e) => {
+
+  }
+
   render() {
     return (
       <form>
@@ -37,12 +41,19 @@ class Form extends Component {
             placeholder="Enter text"
             onChange={this.handleChange}
           />
+          <FormGroup controlId="formControlsTextarea">
+            <ControlLabel>Textarea</ControlLabel>
+            <FormControl componentClass="textarea" placeholder="textarea" />
+          </FormGroup>
           <FormControl.Feedback />
           <HelpBlock>Validation is based on string length.</HelpBlock>
         </FormGroup>
+        <Button bsStyle="success" type="submit">
+          Submit
+        </Button>
       </form>
     );
-  }  
+  }
 }
 
 export default Form;
