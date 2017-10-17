@@ -16,6 +16,8 @@ class Display extends Component {
     render(){
         return(
             <div className='jobsList'>
+                <h1>My Job Tracker</h1>
+                <h4>Here is a tracker for jobs you've applied to:</h4>
                 {this.state.jobs.map((item, index) => 
                 <li key={index}>
                     <p><span className="objectTitle">Position: </span>{item.title}</p>

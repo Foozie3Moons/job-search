@@ -11,7 +11,8 @@ class Count extends Component {
   }
   componentDidMount() {
     fetch('/jobs')
-    .then(response => console.log(response.json()));
+    .then(response => response.json())
+    .then(response => this.setState({count: response.length}));
   }
 
   render() {

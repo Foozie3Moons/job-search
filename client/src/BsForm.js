@@ -4,10 +4,11 @@ import { FormGroup } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
 import { ControlLabel } from 'react-bootstrap';
 import { HelpBlock } from 'react-bootstrap';
+import { InputGroup } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 
-class BsForm extends Component {
+class BSForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,26 +25,24 @@ class BsForm extends Component {
         <FormGroup
           controlId="formBasicText"
         >
-          <ControlLabel>Job Title</ControlLabel>
-          <FormControl
-            type="text"
-            value={this.state.title}
-            placeholder="Title"
-          />
-          <FormControl.Feedback />
-          <HelpBlock>Required</HelpBlock>
+          <InputGroup>
+            <InputGroup.Addon>Job Title</InputGroup.Addon>
+            <FormControl
+              type="text"
+              value={this.state.title}
+            />
+          </InputGroup>
         </FormGroup>
         <FormGroup
           controlId="formBasicText"
         >
-          <ControlLabel>Company</ControlLabel>
-          <FormControl
-            type="text"
-            value={this.state.title}
-            placeholder="Company name"
-          />
-          <FormControl.Feedback />
-          <HelpBlock>Required</HelpBlock>
+          <InputGroup>
+            <InputGroup.Addon>Company</InputGroup.Addon>
+            <FormControl
+              type="text"
+              value={this.state.company}
+            />
+          </InputGroup>
         </FormGroup>
         <FormGroup
           controlId="formBasicText"
@@ -76,4 +75,4 @@ class BsForm extends Component {
   }
 }
 
-export default BsForm;
+export default BSForm;

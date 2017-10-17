@@ -16,7 +16,7 @@ class SideBar extends Component {
     return (
       <div className="sideBar">
         <div className="LastApplied">
-          last applied
+
         </div>
         <Count />
         <div className="PersonalNote">
