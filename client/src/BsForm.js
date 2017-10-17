@@ -7,6 +7,7 @@ import { HelpBlock } from 'react-bootstrap';
 import { InputGroup } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
+import $ from 'jquery';
 
 class BSForm extends Component {
   constructor(props) {
@@ -19,55 +20,103 @@ class BSForm extends Component {
     }
   }
 
+  handleInputChange = (e) => {
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
+    e.preventDefault()
+    this.setState({
+      [name]: value
+    });
+    console.log(this.state)
+  }
+
+  handleClick = (e) => {
+    e.preventDefault();
+    $.ajax({
+      url: '/jobs',
+      dataType: 'json',
+      type: 'POST',
+      data: this.state,
+      success: function(data) {
+        console.log('hi');
+        this.setState({
+          title: '',
+          company: '',
+          location: '',
+          website: '',
+        });
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error('/jobs', status, err.toString());
+      }.bind(this)
+    });
+  }
+
   render() {
     return (
       <Form horizontal>
         <FormGroup
-          controlId="formBasicText"
+          controlId="title"
         >
           <InputGroup>
             <InputGroup.Addon>Job Title</InputGroup.Addon>
             <FormControl
               type="text"
-              value={this.state.title}
+              name='title'
+              onChange={this.handleInputChange}
             />
           </InputGroup>
         </FormGroup>
         <FormGroup
-          controlId="formBasicText"
+          controlId="company"
         >
           <InputGroup>
             <InputGroup.Addon>Company</InputGroup.Addon>
             <FormControl
               type="text"
-              value={this.state.company}
+              name='company'
+              onChange={this.handleInputChange}
             />
           </InputGroup>
         </FormGroup>
         <FormGroup
-          controlId="formBasicText"
+          controlId="location"
         >
-          <ControlLabel>Location</ControlLabel>
-          <FormControl
-            type="text"
-            value={this.state.title}
-            placeholder="City, State"
-          />
-          <FormControl.Feedback />
+          <InputGroup>
+            <InputGroup.Addon>Location</InputGroup.Addon>
+            <FormControl
+              type="text"
+              name='location'
+              onChange={this.handleInputChange}
+            />
+          </InputGroup>
         </FormGroup>
         <FormGroup
-          controlId="formBasicText"
+          controlId="website"
         >
-          <ControlLabel>Job Posting</ControlLabel>
-          <FormControl
-            type="text"
-            value={this.state.title}
-            placeholder="Link to job posting"
-          />
-          <FormControl.Feedback />
-          <HelpBlock>Where you found the job posting</HelpBlock>
+          <InputGroup>
+            <InputGroup.Addon>Application Link</InputGroup.Addon>
+            <FormControl
+              type="text"
+              name='website'
+              onChange={this.handleInputChange}
+            />
+          </InputGroup>
         </FormGroup>
-        <Button bsStyle="success" type="submit">
+        <FormGroup
+          controlId="comments"
+        >
+          <InputGroup>
+            <InputGroup.Addon>Comments</InputGroup.Addon>
+            <FormControl
+              type="textarea"
+              name='comments'
+              onChange={this.handleInputChange}
+            />
+          </InputGroup>
+        </FormGroup>
+        <Button bsStyle="success" type="submit" onClick={this.handleClick}>
           Submit
         </Button>
       </Form>

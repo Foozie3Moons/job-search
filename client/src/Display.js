@@ -28,7 +28,7 @@ class Display extends Component {
         const options = {
             expandRowBgColor: 'rgb(242,255,162)'
         };
-                
+
         return(
             <div className='jobsList'>
                 <h1>My Job Tracker</h1>

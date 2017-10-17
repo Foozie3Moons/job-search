@@ -5,6 +5,7 @@ import Display from './Display'
 
 import { Grid } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 
 class Main extends Component {
 
@@ -17,13 +18,15 @@ class Main extends Component {
   render() {
     return (
       <Grid>
-        <Col md={8}>
-          <ul>
+        <Col sm={10} xs={12}>
+          <Row className='component'>
             <Display />
-          </ul>
-          <BSForm />
+          </Row>
+          <Row className='component'>
+            <BSForm />
+          </Row>
         </Col>
-        <Col md={4}>
+        <Col sm={1} xs={12}>
           <SideBar />
         </Col>
       </Grid>
