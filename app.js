@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://localhost/mern-backend'); // change this line to change db name
+mongoose.connect('mongodb://localhost/mern-job-search'); // change this line to change db name
 
 // configure routes
 app.use('/', index);
