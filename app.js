@@ -5,11 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var Job = require('./models/job');
+var Foo = require('./models/foo');
 
 var index = require('./routes/index');
-var animals = require('./routes/animals');
-var jobs = require('./routes/jobs');
+var foo = require('./routes/foo');
 
 var app = express();
 
@@ -29,8 +28,7 @@ mongoose.connect('mongodb://localhost/mern-backend'); // change this line to cha
 
 // configure routes
 app.use('/', index);
-app.use('/animals', animals);
-app.use('/jobs', jobs);
+app.use('/foo', foo);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
