@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class NavBar extends Component {
+class SideBar extends Component {
   constructor(props) {
     super(props);
 
@@ -17,11 +17,11 @@ class NavBar extends Component {
 
         </div>
         <div className="jobLink">
-          
+
         </div>
       )
     }
   }
 }
 
-export default NavBar;
+export default SideBar;
