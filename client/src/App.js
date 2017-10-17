@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import SideBar from './SideBar';
 import './App.css';
+import Display from './Display'
 
 class App extends Component {
   constructor(props) {
@@ -18,7 +19,8 @@ class App extends Component {
   render() {
     return (
       <ul className="App">
-        {this.state.job}
+        {/* {this.state.job} */}
+        <Display />
       </ul>
     );
   }
