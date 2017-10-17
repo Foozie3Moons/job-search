@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import Main from './Main'
+import Display from './Display'
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +19,9 @@ class App extends Component {
 
   render() {
     return (
+      <ul className="App">
+        <Display />
+      </ul>
       <Main />
     );
   }
