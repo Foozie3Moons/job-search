@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import SideBar from './SideBar';
 import './App.css';
-
-import Main from './Main'
-import Display from './Display'
+import Main from './Main';
+import Display from './Display';
+import NavBar from './NavBar';
 
 class App extends Component {
   constructor(props) {
@@ -20,10 +20,10 @@ class App extends Component {
 
   render() {
     return (
-      <ul className="App">
-        <Display />
-      </ul>
-      <Main />
+      <div>
+        <NavBar />
+        <Main />
+      </div>
     );
   }
 }

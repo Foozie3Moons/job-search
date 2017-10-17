@@ -53,11 +53,9 @@ class SideBar extends Component {
         <div className="LastApplied">
 
         </div>
-        <div className="Count">
-
-        </div>
+        <Count />
         <div className="PersonalNote">
-
+          personal note
         </div>
         <div className="JobLink">
           <JobLink editMode={this.state.editMode}
