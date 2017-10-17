@@ -20,10 +20,14 @@ class App extends Component {
 
   render() {
     return (
-      <ul className="App">
-        <Display />
-      </ul>
-      <Main />
+      <div>
+        <ul className="App">
+          <Display />
+        </ul>
+        <Main />
+        <SideBar />
+      </div>
+      
     );
   }
 }

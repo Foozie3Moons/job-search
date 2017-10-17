@@ -19,7 +19,7 @@ class SideBar extends Component {
 
         </div>
         <div className="Count">
-
+          <Count />
         </div>
         <div className="PersonalNote">
 
