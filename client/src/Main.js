@@ -27,7 +27,7 @@ class Main extends Component {
             <BSForm />
           </Row>
         </Col>
-        <Col sm={1} xs={12}>
+        <Col sm={2} xs={12}>
           <SideBar />
         </Col>
       </Grid>
