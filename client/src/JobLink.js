@@ -48,7 +48,7 @@ class JobLink extends Component {
               // Here we are not in edit mode, so only show the items
               return (
                 <div className="LinkList" key={index}>
-                  {item}
+                  <a href={item}>{item}</a>
                   <a onClick={this.handleEditClick} data-key={index} > [Edit] </a>
                 </div>
               )

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-
+import $ from 'jquery';
 
 class Display extends Component {
     constructor(props) {
@@ -17,23 +16,36 @@ class Display extends Component {
     }
 
     render(){
-        var jobslist = this.state.jobs;
-    
-      
-
         return(
-            <div className='jobsList' id="works">
+            <div className='jobsList'>
                 <h1>My Job Tracker</h1>
                 <h4>Here is a tracker for jobs you've applied to:</h4>
-                <BootstrapTable data={jobslist}
-                    search>
-                    <TableHeaderColumn dataField='title' isKey>Job Title</TableHeaderColumn>
-                    <TableHeaderColumn dataField='company'>Company Name</TableHeaderColumn>
-                    <TableHeaderColumn dataField='location'>Job Location</TableHeaderColumn>
-                    <TableHeaderColumn dataField='website' columnClassName='long'>Job Link</TableHeaderColumn>
-                    <TableHeaderColumn dataField='date'>Date Applied</TableHeaderColumn>
-                    <TableHeaderColumn dataField='meta.comments'>Notes</TableHeaderColumn>
-                </BootstrapTable>
+                <table>                   
+                <div>
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Company</th>
+                            <th>Location</th>
+                            <th>Date Applied</th>
+                            <th>Link</th>
+                            <th>Notes/Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {this.state.jobs.map((item, index) => 
+                        <tr key={index} className="tableBody">
+                            <td>{item.title}</td>
+                            <td>{item.company}</td>
+                            <td>{item.location}</td>
+                            <td>{item.date}</td>
+                            <td><a href={item.website}>{item.website}</a></td>
+                            <td>{item.meta.comments}</td>
+                            <td><a href="/">Updates?</a></td>
+                        </tr>)}
+                    </tbody>
+                </div>
+                </table>
             </div>
         )
     }

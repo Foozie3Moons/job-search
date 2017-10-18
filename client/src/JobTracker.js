@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
-import BSForm from './BSForm'
+import React, { Component } from 'react';
+import Display from './Display';
 import SideBar from './SideBar'
-import Display from './Display'
 
 import { Grid } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 
-class Main extends Component {
+class JobTracker extends Component {
 
   constructor(props) {
     super(props);
@@ -21,10 +20,7 @@ class Main extends Component {
       <Grid>
         <Col sm={10} xs={12}>
           <Row className='component'>
-            {/* <Display /> */}
-          </Row>
-          <Row className='component'>
-            <BSForm />
+            <Display />
           </Row>
         </Col>
         <Col sm={2} xs={12}>
@@ -35,4 +31,4 @@ class Main extends Component {
   }
 }
 
-export default Main
+export default JobTracker;

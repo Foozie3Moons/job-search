@@ -2,6 +2,17 @@
     text-align: center;
 }
 
+.header {
+    display: inline;
+    margin-right: 20px;
+}
+
+.links {
+    color: #4E9EE9;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
 .App-logo {
     animation: App-logo-spin infinite 20s linear;
     height: 80px;
@@ -9,13 +20,24 @@
 
 .App-header {
     background-color: #222;
-    height: 150px;
+    height: 100px;
     padding: 20px;
-    color: white;
+    /* color: white; */
+    margin-bottom: 10px;
 }
 
 .App-title {
-    font-size: 1.5em;
+    font-size: 2em;
+    vertical-align: center;
+    color: white;
+}
+
+.welcomeBody {
+    margin-top: 100px;
+}
+
+.welcomeBody li {
+    list-style: none;
 }
 
 .App-intro {
@@ -27,11 +49,34 @@
 }
 
 .component {
-  margin: .5em;
-  padding: .25em;
+    margin: .5em;
+    padding: .25em;
 }
 
 .long {
     overflow: auto;
     color: blue;
+    width: 30%;
+}
+
+.short {
+    width: 10%;
+}
+
+.wider {
+    width: 30%;
+}
+
+th {
+    position: sticky;
+}
+
+td {
+    border: 1px solid black;
+    max-width: 300px;
+    padding: 2px;
+}
+
+table tr:hover {
+    background: yellow;
 }
