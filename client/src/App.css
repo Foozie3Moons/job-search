@@ -26,16 +26,7 @@
     display: inline;
 }
 
-.jobsList li {
-    list-style-type: none;
-}
-
-.jobsList p {
-    display: inline;
-}
-
-.objectTitle {
-    color: red;
-    font-size: 1.4em;
-    text-decoration: bold;
+.long {
+    overflow: auto;
+    color: blue;
 }
