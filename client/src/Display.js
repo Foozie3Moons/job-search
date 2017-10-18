@@ -50,8 +50,15 @@ class Display extends Component {
     render(){
         var jobslist = this.state.jobs;
         const cellEditProp = {
-            mode: 'click'
-        };      
+            mode: 'click'   
+        };
+
+        // const options = {
+        //     expandRowBgColor: 'rgb(242,255,162)',
+        //     expandBy: 'row'
+        // };        
+      
+
         return(
             <div className='jobsList' id="works">
                 <h1>My Job Tracker</h1>

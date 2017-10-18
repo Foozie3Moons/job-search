@@ -26,6 +26,11 @@
     display: inline;
 }
 
+.component {
+  margin: .5em;
+  padding: .25em;
+}
+
 .long {
     overflow: auto;
     color: blue;

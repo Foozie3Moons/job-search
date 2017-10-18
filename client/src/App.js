@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SideBar from './SideBar';
 import './App.css';
 import Main from './Main';
-import Display from './Display';
 import NavBar from './NavBar';
 
 class App extends Component {
