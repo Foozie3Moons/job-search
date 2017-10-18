@@ -47,25 +47,12 @@ class Display extends Component {
         .then(response => this.setState({jobs: response}))
         .then(console.log(this.state.jobs))
     }
-    // isExpandableRow(row) {
-    //     if (row.id < 3) return true;
-    //     else return false;
-    // }
-    // expandComponent(row) {
-    //     console.log("clicked me!")
-    //     return (
-    //         <BSTable data={row.id} />
-    //     )
-    // }
+
     render(){
         var jobslist = this.state.jobs;
         const cellEditProp = {
             mode: 'click'
-        };
-        // const options = {
-        //     expandRowBgColor: 'rgb(242,255,162)',
-        //     expandBy: 'row'
-        // };        
+        };      
         return(
             <div className='jobsList' id="works">
                 <h1>My Job Tracker</h1>
@@ -74,9 +61,6 @@ class Display extends Component {
                     remote={ true }
                     cellEdit={cellEditProp}
                     options={{onCellEdit: this.props.onCellEdit}}
-                    /* options={options}
-                    isexpandableRow={ this.isExpandableRow }
-                    expandComponent={ this.expandComponent } */
                     search>
                     <TableHeaderColumn dataField='title' isKey>Job Title</TableHeaderColumn>
                     <TableHeaderColumn dataField='company'>Company Name</TableHeaderColumn>
