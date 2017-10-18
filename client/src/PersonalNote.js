@@ -14,7 +14,7 @@ class PersonalNote extends Component {
   handleEditClick(e) {
     e.preventDefault();
     var key = e.target.getAttribute('data-key');
-    this.props.toggleEditMode(key);
+    this.props.noteToggleEditMode(key);
   }
   // This is the local function that handles the SAVE CHANGES click event
   // It calls the method passed in from the parent, then updates local state
