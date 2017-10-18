@@ -45,7 +45,6 @@ class Display extends Component {
         fetch('/jobs')
         .then(response => response.json())
         .then(response => this.setState({jobs: response}))
-        .then(console.log(this.state.jobs))
     }
 
     render(){
@@ -64,10 +63,10 @@ class Display extends Component {
                     search>
                     <TableHeaderColumn dataField='title' isKey>Job Title</TableHeaderColumn>
                     <TableHeaderColumn dataField='company'>Company Name</TableHeaderColumn>
-                    <TableHeaderColumn dataField='location'>Job Location</TableHeaderColumn>
+                    {/* <TableHeaderColumn dataField='location'>Job Location</TableHeaderColumn> */}
                     <TableHeaderColumn dataField='website' columnClassName='long'>Job Link</TableHeaderColumn>
-                    <TableHeaderColumn dataField='date'>Date Applied</TableHeaderColumn>
-                    <TableHeaderColumn dataField='comments'>Notes</TableHeaderColumn>
+                    {/* <TableHeaderColumn dataField='date'>Date Applied</TableHeaderColumn> */}
+                    {/* <TableHeaderColumn dataField='comments'>Notes</TableHeaderColumn> */}
                 </BootstrapTable>
             </div>
         )
