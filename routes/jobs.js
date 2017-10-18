@@ -12,6 +12,19 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
+  Job.create({
+    title: req.body.title,
+    company: req.body.company,
+    location: req.body.location,
+    website: req.body.website,
+    date: new Date(),
+    meta: {
+      comments: req.body.comments
+    }
+  }, function(err, jobs) {
+    if (err) return console.log(err);
+    res.send('success');
+  })
 
 })
 
