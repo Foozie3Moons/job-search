@@ -1,6 +1,38 @@
 import React, { Component } from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
+class RemoteStoreCellEdit extends React.Component {
+    constructor(props){
+        super(props)
+        // this.products = getProducts();
+        this.state = {
+            data: this.products
+        };
+    };
+    onCellEdit = (row, fieldName, value) => {
+        const {data} =this.state;
+        let rowIdx;
+        const targetRow = data.find((prod, i) => {
+            if (prod.id === row.id) {
+                rowIdx = i;
+                return true;
+            }
+            return false;
+        });
+        if (targetRow) {
+        targetRow[fieldName] = value;
+        data[rowIdx] = targetRow;
+        this.setState({ data });
+        }
+    }
+    render() {
+        return (
+            <Display onCellEdit={this.onCellEdit}{ ...this.state } />
+        );
+    }
+}
+
+
 class Display extends Component {
     constructor(props) {
         super(props)
@@ -13,34 +45,43 @@ class Display extends Component {
         fetch('/jobs')
         .then(response => response.json())
         .then(response => this.setState({jobs: response}))
+        .then(console.log(this.state.jobs))
     }
-    isExpandableRow(row) {
-        if (row.id < 2) return true;
-        else return false;
-    }
-    expandComponent(row) {
-        return (
-            <BootstrapTable data={row.expand} />
-        )
-    }
+    // isExpandableRow(row) {
+    //     if (row.id < 3) return true;
+    //     else return false;
+    // }
+    // expandComponent(row) {
+    //     console.log("clicked me!")
+    //     return (
+    //         <BSTable data={row.id} />
+    //     )
+    // }
     render(){
         var jobslist = this.state.jobs;
-        const options = {
-            expandRowBgColor: 'rgb(242,255,162)'
+        const cellEditProp = {
+            mode: 'click'
         };
-                
+        // const options = {
+        //     expandRowBgColor: 'rgb(242,255,162)',
+        //     expandBy: 'row'
+        // };        
         return(
-            <div className='jobsList'>
+            <div className='jobsList' id="works">
                 <h1>My Job Tracker</h1>
                 <h4>Here is a tracker for jobs you've applied to:</h4>
                 <BootstrapTable data={jobslist}
-                    options={options}
-                    expandableRow={ this.isExpandableRow }
-                    expandComponent={ this.expandComponent }>
+                    remote={ true }
+                    cellEdit={cellEditProp}
+                    options={{onCellEdit: this.props.onCellEdit}}
+                    /* options={options}
+                    isexpandableRow={ this.isExpandableRow }
+                    expandComponent={ this.expandComponent } */
+                    search>
                     <TableHeaderColumn dataField='title' isKey>Job Title</TableHeaderColumn>
                     <TableHeaderColumn dataField='company'>Company Name</TableHeaderColumn>
                     <TableHeaderColumn dataField='location'>Job Location</TableHeaderColumn>
-                    <TableHeaderColumn dataField='website'>Job Link</TableHeaderColumn>
+                    <TableHeaderColumn dataField='website' columnClassName='long'>Job Link</TableHeaderColumn>
                     <TableHeaderColumn dataField='date'>Date Applied</TableHeaderColumn>
                     <TableHeaderColumn dataField='comments'>Notes</TableHeaderColumn>
                 </BootstrapTable>
