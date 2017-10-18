@@ -33,6 +33,7 @@ class RemoteStoreCellEdit extends React.Component {
 }
 
 
+
 class Display extends Component {
     constructor(props) {
         super(props)
@@ -51,12 +52,7 @@ class Display extends Component {
         var jobslist = this.state.jobs;
         const cellEditProp = {
             mode: 'click'   
-        };
-
-        // const options = {
-        //     expandRowBgColor: 'rgb(242,255,162)',
-        //     expandBy: 'row'
-        // };        
+        };      
       
 
         return(
@@ -66,14 +62,16 @@ class Display extends Component {
                 <BootstrapTable data={jobslist}
                     remote={ true }
                     cellEdit={cellEditProp}
-                    options={{onCellEdit: this.props.onCellEdit}}
-                    search>
+                    options={{onCellEdit: this.props.onCellEdit, onSearchChange: this.props.onSearchChange, clearSearch: true }}
+                    search={true}
+                    multiColumnSearch={ true }>
                     <TableHeaderColumn dataField='title' isKey>Job Title</TableHeaderColumn>
                     <TableHeaderColumn dataField='company'>Company Name</TableHeaderColumn>
                     {/* <TableHeaderColumn dataField='location'>Job Location</TableHeaderColumn> */}
                     <TableHeaderColumn dataField='website' columnClassName='long'>Job Link</TableHeaderColumn>
                     {/* <TableHeaderColumn dataField='date'>Date Applied</TableHeaderColumn> */}
                     {/* <TableHeaderColumn dataField='comments'>Notes</TableHeaderColumn> */}
+                    <TableHeaderColumn ></TableHeaderColumn>
                 </BootstrapTable>
             </div>
         )
