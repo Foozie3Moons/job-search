@@ -19,7 +19,7 @@ class Main extends Component {
     return (
 
       <Grid>
-        <Col sm={10} xs={12}>
+        <Col sm={9} xs={12}>
           <Row className='component'>
             <Display />
           </Row>
@@ -27,7 +27,7 @@ class Main extends Component {
             <BSForm />
           </Row>
         </Col>
-        <Col sm={2} xs={12}>
+        <Col sm={3} xs={12}>
           <SideBar />
         </Col>
       </Grid>

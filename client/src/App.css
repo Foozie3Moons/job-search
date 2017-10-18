@@ -35,3 +35,43 @@
     overflow: auto;
     color: blue;
 }
+
+.sideBar {
+  border-style: groove;
+  text-align: center;
+  margin-top: 50%;
+  background-color: #eeeeee;
+  padding-bottom: 3rem;
+}
+
+.personalNote {
+  /*margin: 1rem;
+  background-color: white;*/
+}
+
+.sideHead {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.input-group {
+  width: 98%;
+}
+
+.input-group-addon {
+  width: 12.5rem;
+}
+
+.form-horizontal {
+  margin-left: 1.5rem;
+}
+
+.btn-success {
+  float: right;
+}
+
+.countDiv {
+  color: white;
+  margin: 1rem;
+  background-color: rgb(101, 101, 101);
+}

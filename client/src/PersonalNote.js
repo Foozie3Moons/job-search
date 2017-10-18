@@ -14,7 +14,7 @@ class PersonalNote extends Component {
   handleEditClick(e) {
     e.preventDefault();
     var key = e.target.getAttribute('data-key');
-    this.props.toggleEditMode(key);
+    this.props.noteToggleEditMode(key);
   }
   // This is the local function that handles the SAVE CHANGES click event
   // It calls the method passed in from the parent, then updates local state
@@ -48,8 +48,8 @@ class PersonalNote extends Component {
               // Here we are not in edit mode, so only show the items
               return (
                 <div className="theNote" key={index}>
-                  {item}
-                  <a onClick={this.handleEditClick} data-key={index} > [Edit] </a>
+                  {item}<br></br>
+                  <a onClick={this.handleEditClick} data-key={index} > <span>[Edit]</span> </a>
                 </div>
               )
             }
