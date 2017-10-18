@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Display from './Display';
-import SideBar from './SideBar'
+import SideBar from './SideBar';
 
 import { Grid } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
