@@ -71,7 +71,7 @@ class Display extends Component {
                     <TableHeaderColumn dataField='website' columnClassName='long'>Job Link</TableHeaderColumn>
                     {/* <TableHeaderColumn dataField='date'>Date Applied</TableHeaderColumn> */}
                     {/* <TableHeaderColumn dataField='comments'>Notes</TableHeaderColumn> */}
-                    <TableHeaderColumn ></TableHeaderColumn>
+                    <TableHeaderColumn ><button>Edit?</button></TableHeaderColumn>
                 </BootstrapTable>
             </div>
         )
