@@ -12,7 +12,7 @@ class SideBar extends Component {
       linkArray: ['https://www.monster.com'],
       editMode: false,
       editId: '',
-      noteArray: ['Just Do It'],
+      noteArray: ['Finish formating resume, put a header on my portfolio page, and then email Beth about all the job opportunities she be slangin my way.'],
       noteEditMode: false,
       noteEditId: ''
     };
