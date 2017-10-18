@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
+import JobTracker from './JobTracker';
+import Main from './Main';
+import Welcome from './Welcome';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+  } from 'react-router-dom';
 
 class NavBar extends Component {
     render () {
         return (
-            <div className="App-header">
-                {/* <img src="/img/smug-LittleFinger.gif" className="App-logo header" alt="logo" /> */}
-                <h2 className="header"><br/> Job Tracker</h2>
-                <p className="">Tryna Track them jobs</p>
-                <ul>
-                    <li><a href='#works'>My Jobs</a></li>
-                    <li><a href='#tester'>New Job</a></li>
-                </ul>
-            </div>
+            <Router>
+                <div className="App-header">
+                    <h2 className="App-title header col-xs-12 col-sm-8">Job Buddy</h2>
+                    <nav className="header ">
+                        <Link className='links' to='/'>Home</Link>{' '}
+                        <Link className='links' to='/jobtracker'>My Jobs</Link>{' '}
+                        <Link className='links' to='/main'>New Job</Link>{' '}
+                    </nav>
+                    <Route exact path='/' component={Welcome} />
+                    <Route  path='/main' component={Main} />
+                    <Route  path='/jobtracker' component={JobTracker} />
+                </div>
+            </Router>
         )
     }
 }

@@ -49,8 +49,7 @@ class JobLink extends Component {
               return (
                 <div className="LinkList" key={index}>
                   <a href={item}>{item}</a>
-                  <br></br>
-                  <a onClick={this.handleEditClick} data-key={index} > <span>[Edit]</span> </a>
+                  <a onClick={this.handleEditClick} data-key={index} > [Edit] </a>
                 </div>
               )
             }
