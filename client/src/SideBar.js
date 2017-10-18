@@ -9,10 +9,10 @@ class SideBar extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      linkArray: ['www.monster.com'],
+      linkArray: ['https://www.monster.com'],
       editMode: false,
       editId: '',
-      noteArray: ['You can do this'],
+      noteArray: ['Finish formating resume, put a header on my portfolio page, and then email Beth about all the job opportunities she be slangin my way.'],
       noteEditMode: false,
       noteEditId: ''
     };
@@ -74,19 +74,19 @@ class SideBar extends Component {
   render() {
     return (
       <div className="sideBar">
-        <h2>Stats</h2>
-        <div className="LastApplied">
+        <h2 className="sideHead">@shway250</h2>
+        <div className="lastApplied">
 
         </div>
         <Count />
-        <div className="PersonalNote">
+        <div className="personalNote">
           <PersonalNote noteEditMode={this.state.noteEditMode}
                   noteEditId={this.state.noteEditId}
                   noteToggleEditMode={this.noteToggleEditMode}
                   editNote={this.editNote}
                   notes={this.state.noteArray} />
         </div>
-        <div className="JobLink">
+        <div className="jobLink">
           <JobLink editMode={this.state.editMode}
                   editId={this.state.editId}
                   toggleEditMode={this.toggleEditMode}
