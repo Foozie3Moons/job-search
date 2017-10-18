@@ -17,6 +17,7 @@ class Main extends Component {
   }
   render() {
     return (
+
       <Grid>
         <Col sm={10} xs={12}>
           <Row className='component'>

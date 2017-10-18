@@ -26,21 +26,12 @@
     display: inline;
 }
 
-.jobsList li {
-    list-style-type: none;
-}
-
-.jobsList p {
-    display: inline;
-}
-
-.objectTitle {
-    color: red;
-    font-size: 1.4em;
-    text-decoration: bold;
-}
-
 .component {
   margin: .5em;
   padding: .25em;
+}
+
+.long {
+    overflow: auto;
+    color: blue;
 }
