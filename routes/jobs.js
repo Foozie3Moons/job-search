@@ -5,10 +5,14 @@ var router = express.Router();
 
 /* GET foo. */
 router.get('/', function(req, res, next) {
-    Job.find({}, function(err, jobs) {
-        if (err) return console.log(err);
-        res.send(jobs)
-    })
+  Job.find({}, function(err, jobs) {
+    if (err) return console.log(err);
+    res.send(jobs)
+  })
 });
+
+router.post('/', function(req, res, next) {
+
+})
 
 module.exports = router;

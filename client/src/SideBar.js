@@ -15,6 +15,7 @@ class SideBar extends Component {
   render() {
     return (
       <div className="sideBar">
+        <h2>Stats</h2>
         <div className="LastApplied">
 
         </div>
