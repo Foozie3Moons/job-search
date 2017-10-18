@@ -1,19 +1,19 @@
 var seeder = require('mongoose-seed');
 
-// Connect to MongoDB via Mongoose 
+// Connect to MongoDB via Mongoose
 seeder.connect('mongodb://localhost/mern-job-search', function() {
 
-    // Load Mongoose models 
+    // Load Mongoose models
     seeder.loadModels([
-        './models/job.js'
+        '../models/job.js'
     ]);
 
-    // Clear specified collections 
+    // Clear specified collections
     seeder.clearModels(['Job'], function() {
 
-        // Callback to populate DB once collections have been cleared 
+        // Callback to populate DB once collections have been cleared
         seeder.populateModels(data, function() {
-            //seeder.disconnect(); 
+            //seeder.disconnect();
         });
 
     });
