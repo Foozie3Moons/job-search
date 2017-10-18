@@ -17,8 +17,8 @@ class Count extends Component {
 
   render() {
     return (
-      <div>
-        You've applied for {this.state.count} jobs!
+      <div className="countDiv">
+        Total jobs applied to: {this.state.count}
       </div>
     )
   }

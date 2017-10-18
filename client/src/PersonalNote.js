@@ -48,8 +48,8 @@ class PersonalNote extends Component {
               // Here we are not in edit mode, so only show the items
               return (
                 <div className="theNote" key={index}>
-                  {item}
-                  <a onClick={this.handleEditClick} data-key={index} > [Edit] </a>
+                  {item}<br></br>
+                  <a onClick={this.handleEditClick} data-key={index} > <span>[Edit]</span> </a>
                 </div>
               )
             }
